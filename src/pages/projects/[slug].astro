@@ -1,0 +1,38 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+// One static page per project markdown file — generated at build time.
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { data } = project;
+const { Content } = await render(project);
+---
+
+<Base
+  title={`${data.title} — Sadeem Sattar`}
+  description={data.outcome}
+  path={`/projects/${project.id}/`}
+>
+  <article class="detail">
+    <a href="/#projects" class="detail__back">← All projects</a>
+    <span class="detail__kicker">{data.kicker}</span>
+    <h1 class="detail__title">{data.title}</h1>
+    <div class="detail__metric">
+      <b>{data.metricValue}</b><span>{data.metricLabel}</span>
+    </div>
+    <ul class="detail__tags">
+      {data.tags.map((t) => <li>{t}</li>)}
+    </ul>
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</Base>
