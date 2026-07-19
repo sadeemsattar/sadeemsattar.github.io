@@ -67,13 +67,9 @@ em { font-style: italic; }
 }
 .nav__theme:hover { color: var(--accent); border-color: var(--accent); }
 .nav__theme-sun { display: none; }
-/* swap moon -> sun when dark is active (manual or via OS preference) */
+/* show the sun (i.e. "switch to light") only when dark is toggled on */
 :root[data-theme="dark"] .nav__theme-moon { display: none; }
 :root[data-theme="dark"] .nav__theme-sun { display: inline; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .nav__theme-moon { display: none; }
-  :root:not([data-theme="light"]) .nav__theme-sun { display: inline; }
-}
 .nav__burger { display: none; background: none; border: 0; cursor: pointer; flex-direction: column; gap: 5px; }
 .nav__burger span { width: 24px; height: 2px; background: var(--ink); transition: .3s; }
 

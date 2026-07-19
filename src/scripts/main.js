@@ -41,10 +41,8 @@ if (revealEls.length) {
 const themeToggle = document.getElementById('themeToggle');
 themeToggle?.addEventListener('click', () => {
   const root = document.documentElement;
-  const cur = root.getAttribute('data-theme');
-  const isDark = cur
-    ? cur === 'dark'
-    : window.matchMedia('(prefers-color-scheme: dark)').matches;
+  // Light is the default; dark only when explicitly toggled on.
+  const isDark = root.getAttribute('data-theme') === 'dark';
   const next = isDark ? 'light' : 'dark';
   root.setAttribute('data-theme', next);
   try {
