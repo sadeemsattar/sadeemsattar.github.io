@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+
+const roles = (await getCollection('experience')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<section class="work section" id="work">
+  <div class="section__head reveal">
+    <span class="section__index">03</span>
+    <h2 class="section__title">Experience</h2>
+  </div>
+  <div class="timeline">
+    {roles.map((r) => (
+      <article class="tl reveal">
+        <div class="tl__period">{r.data.period}</div>
+        <div class="tl__body">
+          <h3 class="tl__role">{r.data.role}</h3>
+          <p class="tl__org">
+            {r.data.org}{r.data.orgDetail && <> · <span>{r.data.orgDetail}</span></>}
+          </p>
+          <ul class="tl__points">
+            {r.data.points.map((p) => <li>{p}</li>)}
+          </ul>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

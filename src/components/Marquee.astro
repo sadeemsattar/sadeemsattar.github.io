@@ -1,0 +1,18 @@
+---
+const items = [
+  'LangGraph', 'MCP', 'Multi-Agent', 'Knowledge Graphs', 'RAG',
+  'FastAPI', 'Amazon Bedrock', 'Vertex AI', 'LiveKit',
+];
+// Duplicated once so the -50% keyframe loops seamlessly.
+const track = [...items, ...items];
+---
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    {track.map((item) => (
+      <>
+        <span>{item}</span><span class="marquee__star">✦</span>
+      </>
+    ))}
+  </div>
+</div>

@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const { data, id } = project;
+---
+
+<article class:list={['card', 'reveal', { 'card--wide': data.wide }]}>
+  <div class="card__top">
+    <span class="card__kicker">{data.kicker}</span>
+    <span class="card__num">{data.num}</span>
+  </div>
+  <h3 class="card__title">{data.title}</h3>
+  <div class="card__metric">
+    <b>{data.metricValue}</b><span>{data.metricLabel}</span>
+  </div>
+  <p class="card__outcome">{data.outcome}</p>
+  <p class="card__desc">{data.desc}</p>
+  <ul class="card__tags">
+    {data.tags.map((t) => <li>{t}</li>)}
+  </ul>
+  <a class="card__link" href={`/projects/${id}/`}>Read the case study →</a>
+</article>
