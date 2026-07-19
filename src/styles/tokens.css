@@ -1,0 +1,31 @@
+/* ============================================================
+   Design tokens — the single source of truth for the whole site.
+   Change a value here and it propagates everywhere. No component
+   should hardcode a color, radius, or easing that lives here.
+   ============================================================ */
+:root {
+  /* Surfaces */
+  --bg:        #f6f4ef;   /* warm paper            */
+  --bg-2:      #efece4;   /* slightly deeper       */
+  --card:      #fffdf9;
+
+  /* Ink */
+  --ink:       #1a1815;   /* near-black warm       */
+  --ink-soft:  #55504a;
+  --ink-faint: #8a827a;
+
+  /* Lines & accents */
+  --line:      #e2ddd2;
+  --accent:    #c8451f;   /* terracotta            */
+  --accent-2:  #1f5c4d;   /* deep green            */
+
+  /* Shape & motion */
+  --radius:    18px;
+  --maxw:      1140px;
+  --ease:      cubic-bezier(.22, .61, .36, 1);
+
+  /* Type families */
+  --font-sans:  'Inter', system-ui, sans-serif;
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-mono:  'JetBrains Mono', ui-monospace, monospace;
+}
