@@ -1,0 +1,25 @@
+---
+const stats = [
+  { n: '2.5<span>yrs</span>', p: 'shipping applied AI in production, not demos.' },
+  { n: '6', p: 'flagship AI systems designed and delivered end-to-end.' },
+  { n: '90<span>%</span>', p: 'accuracy on an HR CV-screening system, with reduced bias.' },
+  { n: 'M+', p: 'products clustered by name & image at scale with ML.' },
+  { n: '6×', p: "Dean's List of Honors during my B.S. in Software Engineering." },
+  { n: '1', p: 'CTF Hackathon title — and an Ethical Hacking runner-up.' },
+];
+---
+
+<section class="numbers section" id="numbers">
+  <div class="section__head reveal">
+    <span class="section__index">02</span>
+    <h2 class="section__title">By the numbers</h2>
+  </div>
+  <div class="numbers__grid">
+    {stats.map((s) => (
+      <div class="stat reveal">
+        <span class="stat__n" set:html={s.n}></span>
+        <p>{s.p}</p>
+      </div>
+    ))}
+  </div>
+</section>

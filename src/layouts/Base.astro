@@ -1,0 +1,72 @@
+---
+import '../styles/tokens.css';
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Path for the canonical + og:url, e.g. "/" or "/projects/alphamem/". */
+  path?: string;
+  /** Absolute-from-root image path for OG/Twitter cards. */
+  image?: string;
+}
+
+const {
+  title = 'Sadeem Sattar — Staff Engineer, AI Systems',
+  description = 'Staff Engineer building agentic AI systems — product memory engines, a Venture Operating System, and LLM platforms that turn scattered signals into intelligence.',
+  path = '/',
+  image = '/resources/profile.png',
+} = Astro.props;
+
+// Astro.site comes from astro.config.mjs — one source of truth for absolute URLs.
+const canonical = new URL(path, Astro.site).href;
+const ogImage = new URL(image, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph (LinkedIn, Slack, WhatsApp, Facebook link previews) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content="Sadeem Sattar" />
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👋</text></svg>"
+    />
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <Nav />
+    <slot />
+    <Footer />
+
+    <script>
+      import '../scripts/main.js';
+    </script>
+  </body>
+</html>

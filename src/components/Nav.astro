@@ -1,0 +1,20 @@
+---
+// Links use root-anchored hrefs (/#about) so the nav works from every page,
+// including project detail pages, not just the homepage.
+const links = [
+  { href: '/#about', label: 'About' },
+  { href: '/#work', label: 'Experience' },
+  { href: '/#projects', label: 'Projects' },
+  { href: '/#skills', label: 'Skills' },
+  { href: '/#contact', label: 'Contact' },
+];
+---
+
+<header class="nav" id="nav">
+  <a href="/" class="nav__brand">SS<span class="nav__dot">.</span></a>
+  <nav class="nav__links">
+    {links.map((l) => <a href={l.href}>{l.label}</a>)}
+  </nav>
+  <a href="/resources/AI_Engineer.pdf" target="_blank" rel="noopener" class="nav__cta">Resume</a>
+  <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+</header>

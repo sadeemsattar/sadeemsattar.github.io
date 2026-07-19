@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectCard from './ProjectCard.astro';
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<section class="projects section" id="projects">
+  <div class="section__head reveal">
+    <span class="section__index">04</span>
+    <h2 class="section__title">Selected Projects</h2>
+  </div>
+  <p class="projects__note reveal">
+    A few of the systems I've designed and shipped. Click any card for the full
+    write-up.
+  </p>
+  <div class="projects__grid">
+    {projects.map((project) => <ProjectCard project={project} />)}
+  </div>
+</section>

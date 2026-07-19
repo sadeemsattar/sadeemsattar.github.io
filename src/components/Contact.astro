@@ -1,0 +1,25 @@
+---
+const socials = [
+  { href: 'https://github.com/sadeemsattar', label: 'GitHub ↗' },
+  { href: 'https://pk.linkedin.com/in/sadeem-sattar-aa11651a0', label: 'LinkedIn ↗' },
+  { href: 'https://medium.com/@sadeem1030sattar', label: 'Medium ↗' },
+  { href: '/resources/AI_Engineer.pdf', label: 'Resume ↗' },
+];
+---
+
+<section class="contact section" id="contact">
+  <div class="contact__inner reveal">
+    <span class="section__index">06</span>
+    <h2 class="contact__title">Let's build something<br /><em>intelligent</em>.</h2>
+    <p class="contact__lede">
+      Open to conversations about agentic systems, LLM infrastructure, and hard
+      applied-AI problems. The fastest way to reach me is email.
+    </p>
+    <a href="mailto:sadeem1030sattar@gmail.com" class="contact__email">sadeem1030sattar@gmail.com</a>
+    <div class="contact__links">
+      {socials.map((s) => (
+        <a href={s.href} target="_blank" rel="noopener">{s.label}</a>
+      ))}
+    </div>
+  </div>
+</section>

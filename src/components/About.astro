@@ -1,0 +1,45 @@
+---
+const facts = [
+  { label: 'Now', value: 'Staff Engineer<br /><em>DisruptLab</em>' },
+  { label: 'Focus', value: 'Agentic systems, LLM<br />memory & reasoning' },
+  { label: 'Education', value: 'B.S. Software Eng.<br /><em>FAST NUCES · 3.56</em>' },
+  { label: 'Honors', value: "6× Dean's List<br />CTF Hackathon Winner" },
+];
+---
+
+<section class="about section" id="about">
+  <div class="section__head reveal">
+    <span class="section__index">01</span>
+    <h2 class="section__title">About</h2>
+  </div>
+  <div class="about__grid">
+    <div class="about__lead reveal">
+      <p>
+        I'm a software engineer who lives at the intersection of
+        <strong>applied AI and production systems</strong>. For the last few
+        years I've been building the infrastructure that makes LLMs actually
+        useful — agentic workflows, persistent memory, and reasoning layers that
+        don't fall apart the moment they leave a demo.
+      </p>
+      <p>
+        At <strong>DisruptLab</strong> I lead work on product-memory and venture
+        intelligence — systems that ingest an organization's signals, resolve
+        entities across sources, and surface patterns no single tool could see.
+        Before that I shipped multi-agent chatbots, recommendation systems, and
+        ML clustering at scale.
+      </p>
+      <p>
+        I care about the unglamorous parts: clean architecture, evaluation
+        harnesses, and turning research ideas into things that survive real users.
+      </p>
+    </div>
+    <aside class="about__facts reveal">
+      {facts.map((f) => (
+        <div class="fact">
+          <span class="fact__label">{f.label}</span>
+          <span class="fact__value" set:html={f.value}></span>
+        </div>
+      ))}
+    </aside>
+  </div>
+</section>

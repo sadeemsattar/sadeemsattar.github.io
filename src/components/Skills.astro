@@ -1,0 +1,23 @@
+---
+const columns = [
+  { title: 'Agents & LLMs', items: ['LangGraph', 'MCP', 'A2A', 'LangChain', 'CrewAI', 'LLM / VLLM', 'RAG'] },
+  { title: 'ML & Cloud AI', items: ['Amazon Bedrock', 'Vertex AI', 'MLflow', 'Airflow', 'NLP', 'PEFT / Q-LoRA'] },
+  { title: 'Backend', items: ['FastAPI', 'Django', 'Node.js', 'LiveKit', 'Python', 'JavaScript'] },
+  { title: 'Data & Frontend', items: ['PostgreSQL', 'MongoDB', 'MilvusDB', 'OpenSearch', 'React', 'Docker'] },
+];
+---
+
+<section class="skills section" id="skills">
+  <div class="section__head reveal">
+    <span class="section__index">05</span>
+    <h2 class="section__title">Toolbox</h2>
+  </div>
+  <div class="skills__grid">
+    {columns.map((col) => (
+      <div class="skillcol reveal">
+        <h3>{col.title}</h3>
+        <ul>{col.items.map((i) => <li>{i}</li>)}</ul>
+      </div>
+    ))}
+  </div>
+</section>
