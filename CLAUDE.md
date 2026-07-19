@@ -81,7 +81,7 @@ astro.config.mjs                # `site` (absolute URLs) + directory build forma
   automatically.
 - **New role:** create `src/content/experience/NN-<slug>.md` (NN = order prefix)
   with `role, org, orgDetail?, period, points[], order`.
-- **New résumé:** replace `public/resources/AI_Engineer.pdf` (keep the filename,
+- **New resume:** replace `public/resources/AI_Engineer.pdf` (keep the filename,
   or update the links in `Nav.astro` and `Contact.astro`).
 
 ## Deploy
@@ -92,11 +92,3 @@ astro.config.mjs                # `site` (absolute URLs) + directory build forma
   **GitHub Actions** (not "Deploy from a branch") for this workflow to publish.
 - Active development happens on a feature branch (e.g. `redesign-astro`); merge to
   `main` to ship. Verify locally with `npm run build && npm run preview` first.
-
-## Git identity (dual-account machine)
-
-This machine has two GitHub accounts. This repo lives under `~/personal/`, so a
-conditional include in `~/.gitconfig` auto-selects the **personal** identity
-(`sadeem1030sattar@gmail.com`) and the personal SSH key. Just use plain
-`git@github.com:` remotes — the per-folder config routes to the right account.
-Do not add a work email or work key here.
