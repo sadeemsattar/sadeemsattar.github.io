@@ -37,6 +37,19 @@ if (revealEls.length) {
   });
 }
 
+// ===== Dark-mode toggle =====
+const themeToggle = document.getElementById('themeToggle');
+themeToggle?.addEventListener('click', () => {
+  const root = document.documentElement;
+  // Light is the default; dark only when explicitly toggled on.
+  const isDark = root.getAttribute('data-theme') === 'dark';
+  const next = isDark ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  try {
+    localStorage.setItem('theme', next);
+  } catch (e) {}
+});
+
 // ===== Mobile menu =====
 const burger = document.getElementById('burger');
 const links = document.querySelector('.nav__links');

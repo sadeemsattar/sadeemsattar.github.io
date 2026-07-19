@@ -29,3 +29,21 @@
   --font-serif: 'Fraunces', Georgia, serif;
   --font-mono:  'JetBrains Mono', ui-monospace, monospace;
 }
+
+/* ============================================================
+   Dark theme — a warm dark palette (not pure black). Light is the
+   default; dark applies ONLY when the visitor toggles it on
+   (data-theme="dark"). Same token names, so every component adapts
+   with zero component changes.
+   ============================================================ */
+:root[data-theme="dark"] {
+  --bg:        #14120f;
+  --bg-2:      #1c1913;
+  --card:      #1e1a14;
+  --ink:       #f2ece1;
+  --ink-soft:  #b3aa9c;
+  --ink-faint: #837a6c;
+  --line:      #322c24;
+  --accent:    #e2673b;
+  --accent-2:  #43a389;
+}
