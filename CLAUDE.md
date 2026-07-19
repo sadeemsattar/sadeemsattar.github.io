@@ -48,7 +48,7 @@ src/
     ├── tokens.css              # design tokens — the ONLY place colors/spacing/fonts are defined
     └── global.css              # all component styles, using the tokens
 
-public/resources/               # AI_Engineer.pdf (résumé), profile.png — served at site root
+public/resources/               # AI_Engineer.pdf (resume), profile.png — served at site root
 .github/workflows/deploy.yml    # build + deploy to Pages on push to main
 astro.config.mjs                # `site` (absolute URLs) + directory build format
 ```

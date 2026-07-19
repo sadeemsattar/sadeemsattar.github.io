@@ -5,7 +5,7 @@ Live at **https://sadeemsattar.github.io**.
 
 Built with [Astro](https://astro.build) (static output), hosted on GitHub Pages.
 A single-page home plus a generated deep-dive page per project. All
-résumé-derived content lives in typed markdown collections, so updating the site
+resume-derived content lives in typed markdown collections, so updating the site
 is editing data files — not touching layout or styles.
 
 ## Run it locally
@@ -41,7 +41,7 @@ src/
     ├── tokens.css              # design tokens — the single source of truth
     └── global.css              # component styles, using the tokens
 
-public/resources/               # AI_Engineer.pdf (résumé), profile.png
+public/resources/               # AI_Engineer.pdf (resume), profile.png
 .github/workflows/deploy.yml    # build + deploy to Pages on push to main
 ```
 
@@ -53,7 +53,7 @@ See [`CLAUDE.md`](./CLAUDE.md) for the architecture and coding principles in ful
   (`title, kicker, num, metricValue, metricLabel, outcome, desc, tags, order`,
   optional `wide`). The markdown body becomes the case-study page.
 - **New role:** add `src/content/experience/NN-<slug>.md` (`NN` = order prefix).
-- **New résumé:** replace `public/resources/AI_Engineer.pdf`.
+- **New resume:** replace `public/resources/AI_Engineer.pdf`.
 
 ## Deploy
 
