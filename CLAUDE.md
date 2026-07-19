@@ -81,7 +81,7 @@ astro.config.mjs                # `site` (absolute URLs) + directory build forma
   automatically.
 - **New role:** create `src/content/experience/NN-<slug>.md` (NN = order prefix)
   with `role, org, orgDetail?, period, points[], order`.
-- **New résumé:** replace `public/resources/AI_Engineer.pdf` (keep the filename,
+- **New resume:** replace `public/resources/AI_Engineer.pdf` (keep the filename,
   or update the links in `Nav.astro` and `Contact.astro`).
 
 ## Deploy
