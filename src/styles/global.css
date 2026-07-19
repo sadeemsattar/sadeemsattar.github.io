@@ -59,6 +59,21 @@ em { font-style: italic; }
   transition: background .25s, color .25s;
 }
 .nav__cta:hover { background: var(--ink); color: var(--bg); }
+.nav__theme {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; border-radius: 50%;
+  background: none; border: 1px solid var(--line); color: var(--ink-soft);
+  cursor: pointer; transition: color .25s, border-color .25s, background .25s;
+}
+.nav__theme:hover { color: var(--accent); border-color: var(--accent); }
+.nav__theme-sun { display: none; }
+/* swap moon -> sun when dark is active (manual or via OS preference) */
+:root[data-theme="dark"] .nav__theme-moon { display: none; }
+:root[data-theme="dark"] .nav__theme-sun { display: inline; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .nav__theme-moon { display: none; }
+  :root:not([data-theme="light"]) .nav__theme-sun { display: inline; }
+}
 .nav__burger { display: none; background: none; border: 0; cursor: pointer; flex-direction: column; gap: 5px; }
 .nav__burger span { width: 24px; height: 2px; background: var(--ink); transition: .3s; }
 

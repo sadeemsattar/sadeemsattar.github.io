@@ -29,3 +29,34 @@
   --font-serif: 'Fraunces', Georgia, serif;
   --font-mono:  'JetBrains Mono', ui-monospace, monospace;
 }
+
+/* ============================================================
+   Dark theme — a warm dark palette (not pure black). Applied
+   when the visitor picks it (data-theme="dark") OR when the OS
+   prefers dark and they haven't forced light. Same token names,
+   so every component adapts with zero component changes.
+   ============================================================ */
+:root[data-theme="dark"] {
+  --bg:        #14120f;
+  --bg-2:      #1c1913;
+  --card:      #1e1a14;
+  --ink:       #f2ece1;
+  --ink-soft:  #b3aa9c;
+  --ink-faint: #837a6c;
+  --line:      #322c24;
+  --accent:    #e2673b;
+  --accent-2:  #43a389;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:        #14120f;
+    --bg-2:      #1c1913;
+    --card:      #1e1a14;
+    --ink:       #f2ece1;
+    --ink-soft:  #b3aa9c;
+    --ink-faint: #837a6c;
+    --line:      #322c24;
+    --accent:    #e2673b;
+    --accent-2:  #43a389;
+  }
+}
