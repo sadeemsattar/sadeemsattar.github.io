@@ -1,6 +1,6 @@
 ---
 title: AlphaMem / AlphaMemX
-kicker: Autonomous Enterprise
+kicker: Knowledge Graph · DisruptLab · R&D
 num: "02"
 metricValue: 46 → 0
 metricLabel: hardcoded schema types made self-learning; zero deploys per vertical
@@ -37,8 +37,17 @@ hardcoded types maintained by engineers, types live as nodes in the graph and
 evolve from the data. New verticals *emerge* from what's ingested rather than
 waiting on an engineering deploy per vertical.
 
+## The stack
+
+- **Graph** — FalkorDB, one graph per tenant, with the ontology stored as nodes
+- **Retrieval** — hybrid search: vector similarity alongside BM25 ranking
+- **Chunking** — Chonkie for document segmentation
+- **Models** — Anthropic and OpenAI for classification and correlation
+- **Transports** — FastAPI for HTTP and SSE, an MCP server for agents
+- **Surface** — Next.js dashboard, live over server-sent events
+- **Runtime** — Python, Docker
+
 ## Outcome
 
-Multi-tenant, built on **FalkorDB** with a living ontology and a **Next.js**
-surface. The headline: **46 → 0** hardcoded schema types, and zero deploys to
-onboard a new vertical.
+Multi-tenant, with a living ontology instead of a fixed one. The headline:
+**46 → 0** hardcoded schema types, and zero deploys to onboard a new vertical.

@@ -209,11 +209,13 @@ em { font-style: italic; }
 .card__num { font-family: var(--font-mono); font-size: .8rem; color: var(--ink-faint); }
 .card__title { font-family: var(--font-serif); font-size: 1.7rem; font-weight: 500; margin-bottom: .9rem; letter-spacing: -.01em; }
 .card--wide .card__title { font-size: 2.1rem; }
-.card__metric { display: flex; align-items: baseline; gap: .6rem; margin-bottom: 1rem;
-  padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
-.card__metric b { font-family: var(--font-serif); font-weight: 500; font-size: 1.9rem;
-  color: var(--accent); line-height: 1; letter-spacing: -.02em; }
-.card__metric span { font-size: .9rem; color: var(--ink-soft); font-weight: 500; }
+.card__metric { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .6rem;
+  margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+.card__metric b { font-family: var(--font-serif); font-weight: 500;
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem); color: var(--accent); line-height: 1.05;
+  letter-spacing: -.02em; text-wrap: balance; }
+.card__metric span { font-size: .9rem; color: var(--ink-soft); font-weight: 500;
+  flex: 1 1 16ch; min-width: 0; }
 .card__outcome { color: var(--ink); font-size: 1.04rem; font-weight: 500; margin-bottom: .8rem; line-height: 1.5; }
 .card--wide .card__outcome { font-size: 1.18rem; }
 .card__desc { color: var(--ink-soft); font-size: .98rem; margin-bottom: 1.4rem; flex: 1; }
@@ -262,11 +264,12 @@ em { font-style: italic; }
   letter-spacing: .08em; color: var(--accent); }
 .detail__title { font-family: var(--font-serif); font-weight: 400; letter-spacing: -.02em;
   font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.02; margin: .6rem 0 1.2rem; }
-.detail__metric { display: flex; align-items: baseline; gap: .6rem; margin-bottom: 1.6rem;
-  padding-bottom: 1.4rem; border-bottom: 1px solid var(--line); }
+.detail__metric { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .6rem;
+  margin-bottom: 1.6rem; padding-bottom: 1.4rem; border-bottom: 1px solid var(--line); }
 .detail__metric b { font-family: var(--font-serif); font-weight: 500; font-size: 2rem; color: var(--accent);
-  line-height: 1; letter-spacing: -.02em; }
-.detail__metric span { font-size: .95rem; color: var(--ink-soft); font-weight: 500; }
+  line-height: 1.05; letter-spacing: -.02em; text-wrap: balance; }
+.detail__metric span { font-size: .95rem; color: var(--ink-soft); font-weight: 500;
+  flex: 1 1 18ch; min-width: 0; }
 .detail__tags { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.6rem 0 2.4rem; }
 .detail__tags li { font-size: .8rem; font-weight: 500; color: var(--ink-soft);
   border: 1px solid var(--line); border-radius: 100px; padding: .3rem .8rem; background: var(--bg); }

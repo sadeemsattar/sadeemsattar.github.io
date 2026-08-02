@@ -1,7 +1,7 @@
 ---
 title: Workflow Automation
 kicker: Agents · R&D
-num: "06"
+num: "09"
 metricValue: Text → run
 metricLabel: plain English becomes an executable workflow
 outcome: >-
@@ -12,7 +12,7 @@ desc: >-
   query into tasks, builds the workflow on the fly with LangGraph, and modifies
   it in real time as needs change.
 tags: [LangGraph, Intent Recognition, Orchestration]
-order: 6
+order: 9
 ---
 
 ## The problem
@@ -27,6 +27,13 @@ A directed-graph workflow engine with **LLM-based intent recognition**. It
 decomposes a plain-English request into tasks, builds the workflow on the fly
 with **LangGraph**, and modifies it in real time as requirements change — across
 Gmail, Slack, Jira, and other tools.
+
+## The stack
+
+- **Graph engine** — LangGraph, for building and mutating the workflow at runtime
+- **Routing** — LLM-based intent recognition to decompose the request into tasks
+- **Integrations** — Gmail, Slack, and Jira behind a common tool interface
+- **Runtime** — Python
 
 ## Outcome
 

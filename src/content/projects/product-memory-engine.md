@@ -1,6 +1,6 @@
 ---
 title: Product Memory Engine
-kicker: Flagship · DisruptLab
+kicker: Agent Memory · DisruptLab · R&D
 num: "01"
 metricValue: 5-layer
 metricLabel: active-memory substrate · FastAPI + MCP
@@ -43,6 +43,27 @@ A five-layer active-memory substrate, not a vector store bolted onto a prompt:
 - **Active reasoner** — hypothesizes causal relationships and tests them against
   the graph, so reasoning is grounded in evidence in the data rather than in the
   phrasing of a prompt.
+
+## Research grounding
+
+- **CausalKG** ([arXiv:2201.03647](https://arxiv.org/abs/2201.03647)) — evaluated
+  as the framework for causal mediation, and deliberately rejected. The full
+  machinery (Causal Bayesian Network input, NDE/NIE estimation, Pearl's Rung-3
+  counterfactual) isn't identifiable under aggregate-only ingestion, so the
+  system represents single-hop mediation *structurally* and phrases every result
+  as "consistent with mediation" rather than claiming it established.
+- **Zep** ([arXiv:2501.13956](https://arxiv.org/abs/2501.13956)) — prior art for
+  bi-temporal knowledge graphs built specifically for agent memory.
+
+## The stack
+
+- **Graph** — Neo4j, with neomodel as the schema of record
+- **Archival store** — PostgreSQL via asyncpg, content-hash idempotent writes
+- **Embeddings** — sentence-transformers on PyTorch
+- **Model access** — LiteLLM over Amazon Bedrock
+- **Transports** — FastAPI for HTTP, fastapi-mcp and the MCP SDK for agents
+- **Service** — Pydantic, SQLAlchemy 2.0, uvicorn, a YAML IoC container
+- **Runtime** — Python 3.12, Docker
 
 ## Outcome
 

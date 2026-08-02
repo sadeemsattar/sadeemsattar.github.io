@@ -1,11 +1,13 @@
 ---
-role: Staff Engineer
+role: Staff Engineer, AI Systems
 org: DisruptLab
-orgDetail: GrowthAnts — Product-Led Growth
+orgDetail: Venture Intelligence Platform
 period: Jul 2025 — Present
 order: 1
 points:
-  - Built an AI system that automates product-analytics workflows — journey mapping, cohort analysis, and tree-based segmentation to pinpoint drivers of user drop-off.
-  - Shipped a churn-prediction pipeline over behavioral + billing events to flag at-risk users and drive proactive retention.
-  - Applied BERTopic modeling to qualitative feedback (Intercom, Typeform, Zendesk) to surface recurring friction points.
+  - Built a multi-tenant growth analytics platform — Airflow pipeline packages over a ClickHouse warehouse, an MLflow-tracked churn model, BERTopic theme mining, and funnel-path discovery — served from a dependency-injected FastAPI service on a clean-architecture split.
+  - Designed and shipped a visual authoring studio for AI workflows, letting non-engineers compose agent steps, deterministic tools, and human approval gates on a React Flow canvas, with a prompt studio for A/B testing variants against real data before release.
+  - Built a session-video intelligence pipeline that reads product recordings with vision-language models and clusters UX friction into recurring themes via vector embeddings.
+  - Shipped guided venture onboarding and a semantic-dedup opportunity pipeline in the core platform — web-crawl inference, human-in-the-loop confirmation, and embedding-based deduplication of surfaced opportunities.
+  - Work spec-first with coding agents at scale — every change is a spec delta, a failing test, an implementation, and an archived record, which is what makes agent-written code reviewable rather than merely fast.
 ---
